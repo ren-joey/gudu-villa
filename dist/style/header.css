@@ -1,0 +1,63 @@
+header.gudu-header {
+  position: relative;
+  background-color: white; }
+  header.gudu-header.fixed {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0; }
+  header.gudu-header > .header-container {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    header.gudu-header > .header-container > .each-option {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer; }
+      header.gudu-header > .header-container > .each-option > .text {
+        padding: 1rem 1.4rem;
+        color: #8c705d;
+        font-size: 1rem;
+        -webkit-transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
+        -o-transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
+        transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93); }
+      header.gudu-header > .header-container > .each-option > .main-logo {
+        padding: 1rem 1.4rem;
+        color: #8c705d;
+        font-size: 4rem; }
+      header.gudu-header > .header-container > .each-option > .hover-frame {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        opacity: 0;
+        -webkit-transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
+        -o-transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
+        transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
+        -webkit-transform: translate(-50%, 110%);
+            -ms-transform: translate(-50%, 110%);
+                transform: translate(-50%, 110%); }
+        header.gudu-header > .header-container > .each-option > .hover-frame > .frame-icon {
+          color: #8c705d;
+          font-size: .85rem; }
+      header.gudu-header > .header-container > .each-option:hover > .text {
+        opacity: .85; }
+      header.gudu-header > .header-container > .each-option:hover > .hover-frame {
+        opacity: .85;
+        -webkit-transform: translate(-50%, 0%);
+            -ms-transform: translate(-50%, 0%);
+                transform: translate(-50%, 0%); }

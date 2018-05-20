@@ -1,0 +1,14 @@
+script.
+    $(function () {
+        var target = $('#chatRoom'),
+            btn = $('#chatBtn');
+
+        btn.on('click', function () {
+            target.toggleClass('closed');
+            if(target.hasClass('closed')){
+                btn.text('開啟留言板');
+            }else{
+                btn.text('關閉留言板');
+            }
+        });
+    });

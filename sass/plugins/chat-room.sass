@@ -1,0 +1,64 @@
+@import ../variables
+@import ../mixins/ease
+@import ../mixins/rwd
+
+.chat-room
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-end
+    padding: 0 2rem 2rem 2rem 
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+    +ease(default, .3s)
+    > .toggle-btn
+        position: absolute
+        left: 1rem
+        bottom: 1rem
+        font-size: $font-sm
+        color: white
+        border-radius: $font-sm
+        border: 1px solid
+        padding-top: $font-sm / 2
+        padding-bottom: $font-sm / 2
+        padding-left: $font-sm
+        padding-right: $font-sm
+        cursor: pointer
+        +ease(default, .3s)
+    .chat-msg
+        display: flex
+        flex-direction: row
+        align-items: center
+        padding-bottom: .85rem
+        &:last-child
+            padding-bottom: 0
+        > .msg
+            background-color: $light-green
+            color: white
+            font-size: $font-xs
+            padding-top: $font-xs / 2
+            padding-bottom: $font-xs / 2
+            padding-left: $font-xs
+            padding-right: $font-xs
+            border-radius: 1rem
+            border: 1px solid
+            margin-right: 1.4rem
+            max-width: 300px
+        > .user-icon
+            width: 75px
+            height: 75px
+            background-repeat: no-repeat
+            background-size: cover
+            &.u01
+                background-image: url(../../images/person01.png)
+            &.u02
+                background-image: url(../../images/person02.png)
+            &.u03
+                background-image: url(../../images/person03.png)
+    &.closed
+        transform: translateY(100%)
+        > .toggle-btn
+            bottom: calc(100% + 1rem)

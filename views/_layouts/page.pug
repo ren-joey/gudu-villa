@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
+    meta(name="author", content="古都民宿")
+    meta(name="copyright", content="古都民宿")
+    link(rel="shortcut icon" href="_favicon.ico")
+    
+    title 古都民宿
+    meta(name= "title", content= "古都民宿")
+    meta(name= "description", content= "古都民宿")
+    meta(name= "keywords", content= "台中民宿 谷關民宿 溫泉 民宿" )
+
+    //- twitter card start
+    meta(property= "twitter:card", content= "summary")
+    meta(property= "twitter:url", content= "//wwww.google.com")
+    meta(property= "twitter:title", content= "我是火星貓首頁的title")
+    meta(property= "twitter:description", content= "我愛火星貓")
+    meta(property= "twitter:site", content= "我愛火星貓")
+
+    //- fb start
+    meta(property= "og:title", content= "我是火星貓首頁的title")
+    meta(property= "og:url", content= "//wwww.google.com")
+    meta(property= "og:description", content= "我愛火星貓")
+    meta(property= "og:image", content= "mages/benspic.jpg")
+    meta(property= "og:image:type", content="image/jpeg")
+    meta(property= "og:image:width", content="500")
+    meta(property= "og:image:height", content="300")
+
+    link(href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" rel="stylesheet")
+    link(rel= "stylesheet" href="./style/global.css")
+    link(rel= "stylesheet" href="./style/style.css")
+
+    script(src='./lib/jquery.min.js')
+
+    //- Bootstrap 4.1.1
+    link(rel= "stylesheet" href="./lib/bootstrap.min.css")
+    script(src='./lib/bootstrap.min.js')
+
+    script(src='./lib/TweenMax.js')
+
+    block head_end
+  
+  body
+  
+    include ../_base/head-menu.pug
+    block content

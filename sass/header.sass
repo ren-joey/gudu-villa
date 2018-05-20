@@ -1,0 +1,49 @@
+@import variables
+@import mixins/ease
+@import mixins/rwd
+    
+header.gudu-header
+    position: relative
+    background-color: white
+    &.fixed
+        position: fixed
+        z-index: 5
+        top: 0
+        left: 0
+        right: 0
+    > .header-container
+        position: relative
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        justify-content: center
+        align-items: center
+        > .each-option
+            position: relative
+            overflow: hidden
+            cursor: pointer
+            > .text
+                padding: 1rem 1.4rem
+                color: $main-brown
+                font-size: $font-sm
+                +ease(default, .15s)
+            > .main-logo
+                padding: 1rem 1.4rem
+                color: $main-brown
+                font-size: 4rem
+            > .hover-frame
+                position: absolute
+                left: 50%
+                bottom: 0
+                opacity: 0
+                +ease(default, .15s)
+                transform: translate(-50%, 110%)
+                > .frame-icon
+                    color: $main-brown
+                    font-size: .85rem
+            &:hover
+                > .text
+                    opacity: .85
+                > .hover-frame
+                    opacity: .85
+                    transform: translate(-50%, 0%)

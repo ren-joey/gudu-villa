@@ -1,0 +1,76 @@
+@import variables
+@import mixins/ease
+@import mixins/rwd
+@import mixins/paddings
+
+.wrapper
+    height: calc( 100vh - 96px )
+    background-image: url(../images/wood-bg.jpg)
+    background-size: cover
+    > .container
+        position: relative
+        +ease(default, .5s)
+        top: 50%
+        transform: translateY(-50%)
+        article.descrip-area
+            border: 2px solid white
+            color: white
+            padding: 2rem
+            display: flex
+            flex-direction: column
+            > h1.subtitle
+                font-size: $font-xl
+                margin-bottom: 2rem
+            > h2.description
+                font-size: $font-sm
+                margin-bottom: 2rem
+                font-weight: 200
+                letter-spacing: 5px
+            .home-icon
+                margin-left: auto
+                font-size: $font-xl
+        .room-options
+            margin-top: 2rem
+            border: 2px solid
+            font-size: $font-md
+            color: white
+            > .title
+                padding: $font-sm
+                text-align: center
+                color: white
+                border-bottom: 2px solid
+            > .options
+                display: flex
+                width: 100%
+                > .option-each
+                    padding: $font-sm
+                    color: white
+                    border-right: 2px solid
+                    flex: 1
+                    text-align: center
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-direction: column
+                    cursor: pointer
+                    +ease(default, .3s)
+                    .special-tag
+                        background-color: $red
+                        font-size: $font-xs
+                        white-space: nowrap
+                        +paddings($font-xs / 1.5)
+                        border-radius: $font-xs
+                    &:last-child
+                        border-right: none
+                        font-size: $font-sm
+                    &:hover
+                        background-color: rgba(255, 255, 255, .15)
+                        
+
+.gudu-header.fixed
+    ~ .wrapper
+        height: 100vh
+        > .container
+            top: calc( 50% + 50px )
+
+        

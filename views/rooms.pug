@@ -1,0 +1,29 @@
+extends _layouts/page
+
+block head_end
+    link(rel="stylesheet", href="./style/main.css")
+
+block content
+    .wrapper
+        .container
+            .row
+                .col-12.col-md-4
+                    article.descrip-area
+                        h1.subtitle 古都房型
+                        h2.description 古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹
+                        .home-icon
+                            .icon-home
+                    .room-options
+                        .title 請選擇房型
+                        .options
+                            .option-each 2
+                            .option-each 4
+                            .option-each 6
+                            .option-each 8
+                            .option-each 
+                                .special-tag 推薦
+                                | 包棟
+                        
+                .col-12.col-md-8
+                    include _partials/image-gallery-simple
+                    
