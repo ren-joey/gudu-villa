@@ -219,3 +219,17 @@
       -webkit-transform: translateY(0);
           -ms-transform: translateY(0);
               transform: translateY(0); } }
+
+.map-link {
+  display: block;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 3;
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all; }
+  .map-link:hover {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2); }

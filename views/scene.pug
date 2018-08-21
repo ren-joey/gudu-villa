@@ -1,20 +1,24 @@
 extends _layouts/page
-include _mixins/image-gallery-simple-attr
 
 block head_end
     link(rel="stylesheet", href="./style/main.css")
+    link(rel="stylesheet", href="./style/plugins/image-gallery.css")
+
     //- fancybox
     link(rel="stylesheet", href="./lib/jquery.fancybox.min.css")
     script(src="./lib/jquery.fancybox.min.js")
 
 block content
+    a.map-link(data-fancybox, data-type='iframe', data-src='https://www.google.com/maps/d/u/0/embed?mid=1j-ocLIzwh757QAjdDcrLunmmrFKdF3OW', href='javascript:;')
+        img(src="./images/map-icon.png", alt="", width="60", height="60")
     section.wrapper(data-style="3")
         .container
             .row
                 .col-12.col-lg-4
                     article.descrip-area(data-style="3")
-                        h1.subtitle 古都周邊
-                        h2.description 古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹
+                        h1.subtitle 谷關溫泉區
+                        h2.description
+                            | 谷關溫泉風景區，有著免費泡腳放鬆身心的谷關溫泉公園，還有兩座至今仍保有最原始風味的吊橋，一個是「谷關吊橋」，為谷關最有名最具代表性的吊橋，因而成為谷關著名地標。另外靠近谷關郵局有一座「捎來吊橋」，谷關、是個幸福的景點，不僅有祝福旅人捎來喜訊的捎來吊橋，更有生男湯傳說的谷關溫泉，來此遊玩、希望旅人都可以身心靈得到滿足。
                         .home-icon
                             .icon-hot-spring
                     //- .room-options
@@ -29,28 +33,56 @@ block content
                     //-             | 包棟
                         
                 .col-12.col-lg-8
-                    +image-gallery('i03')
+                    .image-gallery
+                        #carouselExampleIndicators.carousel.slide.custom-carousel(data-ride='carousel')
+                            ol.carousel-indicators
+                                li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+                                li(data-target='#carouselExampleIndicators', data-slide-to='1')
+                            .carousel-inner
+                                .carousel-item.active
+                                    .image-show.s01
+                                .carousel-item
+                                    .image-show.s02
+                            a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+                                span.carousel-control-prev-icon(aria-hidden='true')
+                                span.sr-only Previous
+                            a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+                                span.carousel-control-next-icon(aria-hidden='true')
+                                span.sr-only Next
 
     section.wrapper(data-style="4")
         .container
             .row
                 .col-12.col-lg-8
-                    +image-gallery('i04')
+                    .image-gallery
+                        #carouselExampleIndicators2.carousel.slide.custom-carousel(data-ride='carousel')
+                            ol.carousel-indicators
+                                li.active(data-target='#carouselExampleIndicators2', data-slide-to='0')
+                                li(data-target='#carouselExampleIndicators2', data-slide-to='1')
+                            .carousel-inner
+                                .carousel-item.active
+                                    .image-show.s03
+                                .carousel-item
+                                    .image-show.s04
+                            a.carousel-control-prev(href='#carouselExampleIndicators2', role='button', data-slide='prev')
+                                span.carousel-control-prev-icon(aria-hidden='true')
+                                span.sr-only Previous
+                            a.carousel-control-next(href='#carouselExampleIndicators2', role='button', data-slide='next')
+                                span.carousel-control-next-icon(aria-hidden='true')
+                                span.sr-only Next
                 .col-12.col-lg-4
                     article.descrip-area(data-style="4")
-                        h1.subtitle 八仙山露營區
-                        h2.description 古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹
+                        h1.subtitle 谷關捎來吊橋
+                        h2.description
+                            |谷關地區有兩座至今仍保有最原始風味的吊橋，一個是「谷關吊橋」，為谷關最有名最具代表性的吊橋，因而成為谷關著名地標。另外靠近谷關郵局有一座「捎來吊橋」，是為了紀念一位泰雅族酋長而命名，這兩個吊橋是來谷關遊玩，絕不能錯過的景點。
                         .social-content
-                            i.fab.fa-facebook(dialog="false")
+                            i.fas.fa-globe-asia(dialog="false")
                                 dialog
-                                    | facebook
-                            i.fab.icon-line(dialog="false")
-                                dialog
-                                    | line
+                                    a(href="https://travel.taichung.gov.tw/zh-tw/Attractions/Intro/346/%E8%B0%B7%E9%97%9C%E6%BA%AB%E6%B3%89", target="_blank") 台中市政府觀光局
                             i.fas.fa-phone-square(dialog="false")
                                 dialog
-                                    | 0912-123-456
-                    .room-options
+                                    | 台中市觀光旅遊局 04-2228-9111
+                    .room-options(style="display: none;")
                         .options
                             .option-each
                                 i.fas.fa-angle-left
@@ -58,6 +90,109 @@ block content
                                 i.fas.fa-bars
                             .option-each
                                 i.fas.fa-angle-right
-                            
+            .row.mt-100px
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="4")
+                        h1.subtitle 魚之鄉鱘龍魚餐廳
+                        h2.description
+                            |魚之鄉-餐飲/養殖/休閒
+                            br
+                            |烹調—不再是以調味料去調整食物的味道
+                            br
+                            |而是以食材去搭配食材,讓食物的味道更有層次
+                            br
+                            |魚之鄉-鱘龍魚+新亞洲無國界料理
+                            br
+                            |保證是能讓您一再回味動人料理
+                        .social-content
+                            i.fab.fa-facebook(dialog="false")
+                                dialog
+                                    a(href="https://www.facebook.com/sturgeonguguan/", target="_blank") 魚之鄉 谷關
+                            i.fas.fa-phone-square(dialog="false")
+                                dialog
+                                    | 04-2594-3319
+                .col-12.col-lg-8
+                    .image-gallery
+                        #carouselExampleIndicators3.carousel.slide.custom-carousel(data-ride='carousel')
+                            ol.carousel-indicators
+                                li.active(data-target='#carouselExampleIndicators3', data-slide-to='0')
+                                li(data-target='#carouselExampleIndicators3', data-slide-to='1')
+                            .carousel-inner
+                                .carousel-item.active
+                                    .image-show.s05
+                                .carousel-item
+                                    .image-show.s06
+                            a.carousel-control-prev(href='#carouselExampleIndicators3', role='button', data-slide='prev')
+                                span.carousel-control-prev-icon(aria-hidden='true')
+                                span.sr-only Previous
+                            a.carousel-control-next(href='#carouselExampleIndicators3', role='button', data-slide='next')
+                                span.carousel-control-next-icon(aria-hidden='true')
+                                span.sr-only Next
+            .row.mt-100px
+                .col-12.col-lg-8
+                    .image-gallery
+                        #carouselExampleIndicators3.carousel.slide.custom-carousel(data-ride='carousel')
+                            ol.carousel-indicators
+                                li.active(data-target='#carouselExampleIndicators3', data-slide-to='0')
+                                li(data-target='#carouselExampleIndicators3', data-slide-to='1')
+                            .carousel-inner
+                                .carousel-item.active
+                                    .image-show.s07
+                                .carousel-item
+                                    .image-show.s08
+                            a.carousel-control-prev(href='#carouselExampleIndicators3', role='button', data-slide='prev')
+                                span.carousel-control-prev-icon(aria-hidden='true')
+                                span.sr-only Previous
+                            a.carousel-control-next(href='#carouselExampleIndicators3', role='button', data-slide='next')
+                                span.carousel-control-next-icon(aria-hidden='true')
+                                span.sr-only Next
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="4")
+                        h1.subtitle 久良梄林場巷
+                        h2.description
+                            | 林場巷的日式宿舍是台灣少見的區域型歷史性建築. 整個土地與房舍都是歸林務局所有, 加上座落於松鶴部落, 少有外界干擾, 所以八、九十年下來, 整個聚落幾乎還是維持原本的面貌型態.歷久不衰的檜木群建築, 是珍貴的活歷史。
+                            br
+                            a(href="https://www.flickr.com/photos/yellowmo/4730070885/", target="_blank") 節錄自 YELLOW Mao. 黃毛
+                        .social-content(style="display: none;")
+                            i.fab.fa-facebook(dialog="false")
+                                dialog
+                                    a(href="https://www.facebook.com/sturgeonguguan/", target="_blank") 魚之鄉 谷關
+                            i.fas.fa-phone-square(dialog="false")
+                                dialog
+                                    | 04-2594-3319
+            .row.mt-100px
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="4")
+                        h1.subtitle 谷關七雄唐麻丹山
+                        h2.description
+                            | 唐麻丹山登山步道由林務局舖設連接「蝴蝶谷瀑布」，造福了喜愛登山與遊山玩水的遊客。唐麻丹山由裡冷部落起登，屬於較為大眾化傳統路線，從傳統登山口到山頂約2.3公里，為谷關七雄中，較為輕鬆登頂的路線。八仙山縱走唐麻丹山(八唐縱走)，或是唐麻丹山縱走白毛山(唐白縱走)也是登山客熟悉的登山路線。
+                            br
+                            a(href="http://l2112021.pixnet.net/blog/post/189552747-%E8%B0%B7%E9%97%9C%E4%B8%83%E9%9B%84-%E5%94%90%E9%BA%BB%E4%B8%B9%E5%B1%B1%28%E6%9D%BE%E9%B6%B4%E7%B7%9A%E8%B7%AF%E7%B7%9A%E5%9C%96%292017.10.9%28%E6%9B%B4", target="_blank") 節錄自 美工阿宗 
+                        .social-content
+                            i.fas.fa-globe-asia(dialog="false")
+                                dialog
+                                    a(href="https://travel.taichung.gov.tw/zh-tw/Attractions/Intro/346/%E8%B0%B7%E9%97%9C%E6%BA%AB%E6%B3%89", target="_blank") 台中市政府觀光局
+                            i.fas.fa-phone-square(dialog="false")
+                                dialog
+                                    | 台中市觀光旅遊局 04-2228-9111
+                .col-12.col-lg-8
+                    .image-gallery
+                        #carouselExampleIndicators3.carousel.slide.custom-carousel(data-ride='carousel')
+                            ol.carousel-indicators
+                                li.active(data-target='#carouselExampleIndicators3', data-slide-to='0')
+                                li(data-target='#carouselExampleIndicators3', data-slide-to='1')
+                            .carousel-inner
+                                .carousel-item.active
+                                    .image-show.s09
+                                .carousel-item
+                                    .image-show.s10
+                            a.carousel-control-prev(href='#carouselExampleIndicators3', role='button', data-slide='prev')
+                                span.carousel-control-prev-icon(aria-hidden='true')
+                                span.sr-only Previous
+                            a.carousel-control-next(href='#carouselExampleIndicators3', role='button', data-slide='next')
+                                span.carousel-control-next-icon(aria-hidden='true')
+                                span.sr-only Next
+                
+                
                     
     include ../script/rooms.script.pug
