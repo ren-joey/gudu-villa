@@ -1,5 +1,64 @@
-link(rel="stylesheet", href="./style/plugins/image-gallery.css")
+mixin image-gallery-simple(room)
+  link(rel="stylesheet", href="./style/plugins/image-gallery.css")
 
-.image-gallery
-  .image-show.i01
-    
+  .image-gallery
+    #carouselExampleIndicators.carousel.slide.custom-carousel(data-ride='carousel')
+      ol.carousel-indicators
+        if(room == 2 || room == 4 || room == 6 || room == 8)
+          li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+          li(data-target='#carouselExampleIndicators', data-slide-to='1')
+        if(room == 9)
+          li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+          li(data-target='#carouselExampleIndicators', data-slide-to='1')
+          li(data-target='#carouselExampleIndicators', data-slide-to='2')
+          li(data-target='#carouselExampleIndicators', data-slide-to='3')
+      .carousel-inner
+        if(room == 2)
+          .carousel-item.active
+            .image-show.i2-0
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='First slide')
+          .carousel-item
+            .image-show.i2-1
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='Second slide')
+        if(room == 4)
+          .carousel-item.active
+            .image-show.i4-0
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='First slide')
+          .carousel-item
+            .image-show.i4-1
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='Second slide')
+        if(room == 6)
+          .carousel-item.active
+            .image-show.i6-0
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='First slide')
+          .carousel-item
+            .image-show.i6-1
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='Second slide')
+        if(room == 8)
+          .carousel-item.active
+            .image-show.i8-0
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='First slide')
+          .carousel-item
+            .image-show.i8-1
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='Second slide')
+        if(room == 9)
+          .carousel-item.active
+            .image-show.i2-0
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='First slide')
+          .carousel-item
+            .image-show.i4-1
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='Second slide')
+          .carousel-item
+            .image-show.i6-0
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='First slide')
+          .carousel-item
+            .image-show.i8-1
+            //- img.d-block.w-100(src='./images/image01.jpg', alt='Second slide')
+      a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+      //- .image-show.i01
+      

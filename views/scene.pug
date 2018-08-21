@@ -1,0 +1,63 @@
+extends _layouts/page
+include _mixins/image-gallery-simple-attr
+
+block head_end
+    link(rel="stylesheet", href="./style/main.css")
+    //- fancybox
+    link(rel="stylesheet", href="./lib/jquery.fancybox.min.css")
+    script(src="./lib/jquery.fancybox.min.js")
+
+block content
+    section.wrapper(data-style="3")
+        .container
+            .row
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="3")
+                        h1.subtitle 古都周邊
+                        h2.description 古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹
+                        .home-icon
+                            .icon-hot-spring
+                    //- .room-options
+                    //-     .title 請選擇房型
+                    //-     .options
+                    //-         .option-each 2
+                    //-         .option-each 4
+                    //-         .option-each 6
+                    //-         .option-each 8
+                    //-         .option-each 
+                    //-             .special-tag 推薦
+                    //-             | 包棟
+                        
+                .col-12.col-lg-8
+                    +image-gallery('i03')
+
+    section.wrapper(data-style="4")
+        .container
+            .row
+                .col-12.col-lg-8
+                    +image-gallery('i04')
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="4")
+                        h1.subtitle 八仙山露營區
+                        h2.description 古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹古都介紹
+                        .social-content
+                            i.fab.fa-facebook(dialog="false")
+                                dialog
+                                    | facebook
+                            i.fab.icon-line(dialog="false")
+                                dialog
+                                    | line
+                            i.fas.fa-phone-square(dialog="false")
+                                dialog
+                                    | 0912-123-456
+                    .room-options
+                        .options
+                            .option-each
+                                i.fas.fa-angle-left
+                            .option-each
+                                i.fas.fa-bars
+                            .option-each
+                                i.fas.fa-angle-right
+                            
+                    
+    include ../script/rooms.script.pug

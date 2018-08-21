@@ -1,0 +1,49 @@
+extends _layouts/page
+include _mixins/image-gallery-simple-attr
+
+block head_end
+    link(rel="stylesheet", href="./style/main.css")
+    //- fancybox
+    link(rel="stylesheet", href="./lib/jquery.fancybox.min.css")
+    script(src="./lib/jquery.fancybox.min.js")
+
+block content
+    section.wrapper(data-style="2")
+        .container
+            .row
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="2")
+                        h1.subtitle 和風餐廳
+                        h2.description 
+                        .home-icon
+                            .icon-toy-horse
+                .col-12.col-lg-8
+                    +image-gallery('i1-0')
+
+    section.wrapper(data-style="4")
+        .container
+            .row
+                .col-12.col-lg-8
+                    +image-gallery('i1-1')
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="4")
+                        h1.subtitle 家庭式廚房
+                        h2.description 
+            .row.mt-100px
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="4")
+                        h1.subtitle 和風客廳
+                        h2.description 
+                .col-12.col-lg-8
+                    +image-gallery('i1-2')
+            .row.mt-100px
+                .col-12.col-lg-8
+                    +image-gallery('i0-1')
+                .col-12.col-lg-4
+                    article.descrip-area(data-style="4")
+                        h1.subtitle 烤肉區及露營區
+                        h2.description 
+                
+                
+                    
+    include ../script/rooms.script.pug

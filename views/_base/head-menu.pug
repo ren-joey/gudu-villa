@@ -1,6 +1,6 @@
 link(rel="stylesheet", href="./style/header.css")
 header.gudu-header.fixed
-	.header-container
+	nav.header-container
 		a(href="index.html").each-option
 			.text 關於古都
 			.hover-frame
@@ -9,13 +9,28 @@ header.gudu-header.fixed
 			.text 古都房型
 			.hover-frame
 				.frame-icon.icon-menu-icon
-		.each-option
+		a(href="index.html").each-option.logo-option.both-option
 			.main-logo.icon-logo
-		a(href="#").each-option
+			.mobile-logo.icon-logo-img
+			.mobile-logo.icon-logo-text
+		a(href="facilities.html").each-option
 			.text 古都設施
 			.hover-frame
 				.frame-icon.icon-menu-icon
-		a(href="#").each-option 
+		a(href="scene.html").each-option 
 			.text 古都周邊
 			.hover-frame
 				.frame-icon.icon-menu-icon
+		.each-option.logo-option.mobile-option
+			.mobile-logo.hamburger-icon
+				input(type="checkbox")
+				span
+				span
+				span
+				.mobile-menu-options
+					a.each-option(href="index.html") 關於古都
+					a.each-option(href="rooms.html") 古都房型
+					a.each-option(href="facilities.html") 古都設施
+					a.each-option(href="scene.html") 古都周邊
+
+				

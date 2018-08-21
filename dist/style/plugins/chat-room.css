@@ -28,6 +28,15 @@
   -webkit-transition: 0.3s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
   -o-transition: 0.3s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
   transition: 0.3s all cubic-bezier(0.18, 0.8, 0.5, 0.93); }
+  @media (max-width: 767.98px) {
+    .chat-room {
+      display: none; } }
+  @media (max-width: 575.98px) {
+    .chat-room {
+      display: none; } }
+  @media (max-width: 991.98px) {
+    .chat-room {
+      display: none; } }
   .chat-room > .toggle-btn {
     position: absolute;
     left: 1rem;

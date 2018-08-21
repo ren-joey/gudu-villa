@@ -15,14 +15,14 @@ html
     //- twitter card start
     meta(property= "twitter:card", content= "summary")
     meta(property= "twitter:url", content= "//wwww.google.com")
-    meta(property= "twitter:title", content= "我是火星貓首頁的title")
-    meta(property= "twitter:description", content= "我愛火星貓")
-    meta(property= "twitter:site", content= "我愛火星貓")
+    meta(property= "twitter:title", content= "古都民宿")
+    meta(property= "twitter:description", content= "古都民宿")
+    meta(property= "twitter:site", content= "古都民宿")
 
     //- fb start
-    meta(property= "og:title", content= "我是火星貓首頁的title")
+    meta(property= "og:title", content= "古都民宿")
     meta(property= "og:url", content= "//wwww.google.com")
-    meta(property= "og:description", content= "我愛火星貓")
+    meta(property= "og:description", content= "古都民宿")
     meta(property= "og:image", content= "mages/benspic.jpg")
     meta(property= "og:image:type", content="image/jpeg")
     meta(property= "og:image:width", content="500")
@@ -34,15 +34,21 @@ html
 
     script(src='./lib/jquery.min.js')
 
-    //- Bootstrap 4.1.1
+    // Bootstrap 4.1.1
     link(rel= "stylesheet" href="./lib/bootstrap.min.css")
     script(src='./lib/bootstrap.min.js')
+
+    // fontawesome 5.0.13
+    link(rel="stylesheet", href="./lib/fontawesome-all.min.css")
 
     script(src='./lib/TweenMax.js')
 
     block head_end
-  
+
   body
   
     include ../_base/head-menu.pug
     block content
+
+    //global js
+    script(src="./script/global.js")

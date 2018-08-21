@@ -29,10 +29,13 @@ header.gudu-header {
       position: relative;
       overflow: hidden;
       cursor: pointer; }
+      header.gudu-header > .header-container > .each-option.mobile-option {
+        display: none; }
       header.gudu-header > .header-container > .each-option > .text {
         padding: 1rem 1.4rem;
         color: #8c705d;
         font-size: 1rem;
+        white-space: nowrap;
         -webkit-transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
         -o-transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93);
         transition: 0.15s all cubic-bezier(0.18, 0.8, 0.5, 0.93); }
@@ -40,6 +43,8 @@ header.gudu-header {
         padding: 1rem 1.4rem;
         color: #8c705d;
         font-size: 4rem; }
+      header.gudu-header > .header-container > .each-option > .mobile-logo {
+        display: none; }
       header.gudu-header > .header-container > .each-option > .hover-frame {
         position: absolute;
         left: 50%;
@@ -61,3 +66,113 @@ header.gudu-header {
         -webkit-transform: translate(-50%, 0%);
             -ms-transform: translate(-50%, 0%);
                 transform: translate(-50%, 0%); }
+    @media (max-width: 575.98px) {
+      header.gudu-header > .header-container {
+        -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+                transform: translateX(0);
+        left: 0;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        header.gudu-header > .header-container > .each-option:not(.mobile-option):not(.both-option) {
+          display: none; }
+        header.gudu-header > .header-container > .each-option.mobile-option {
+          display: block; }
+        header.gudu-header > .header-container > .each-option.logo-option {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          padding: 1.6rem 2rem; }
+          header.gudu-header > .header-container > .each-option.logo-option .main-logo.icon-logo {
+            display: none; }
+          header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo {
+            display: block;
+            color: #8c705d;
+            font-size: 1.2rem; }
+            header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.icon-logo-img {
+              margin-right: .5rem; }
+            header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon {
+              position: relative;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+               -ms-user-select: none;
+                   user-select: none;
+              margin-top: 5px; }
+              header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon span {
+                display: block;
+                width: 33px;
+                height: 4px;
+                margin-bottom: 5px;
+                position: relative;
+                background: #8c705d;
+                -webkit-border-radius: 3px;
+                        border-radius: 3px;
+                -webkit-transform-origin: 4px 0px;
+                    -ms-transform-origin: 4px 0px;
+                        transform-origin: 4px 0px;
+                -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+                transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+                -o-transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+                header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon span:nth-child(2) {
+                  -webkit-transform-origin: 0% 0%;
+                      -ms-transform-origin: 0% 0%;
+                          transform-origin: 0% 0%; }
+                header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon span:nth-child(4) {
+                  -webkit-transform-origin: 0% 100%;
+                      -ms-transform-origin: 0% 100%;
+                          transform-origin: 0% 100%; }
+              header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon .mobile-menu-options {
+                position: fixed;
+                top: 78px;
+                left: 0;
+                right: 0;
+                max-height: 0;
+                -webkit-transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+                -o-transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+                transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+                overflow: hidden; }
+                header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon .mobile-menu-options .each-option {
+                  display: block;
+                  font-size: 1rem;
+                  padding-top: 0.8rem;
+                  padding-bottom: 0.8rem;
+                  padding-left: 1.6rem;
+                  padding-right: 1.6rem;
+                  color: #8c705d;
+                  background-color: white;
+                  border-bottom: 1px solid;
+                  text-align: center; }
+                  header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon .mobile-menu-options .each-option:first-child {
+                    border-top: 1px solid; }
+              header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon input[type^="checkbox"] {
+                display: block;
+                width: 40px;
+                height: 32px;
+                position: absolute;
+                top: -7px;
+                left: -5px;
+                cursor: pointer;
+                opacity: 0;
+                -webkit-touch-callout: none;
+                z-index: 2; }
+                header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon input[type^="checkbox"]:checked ~ span:nth-child(2) {
+                  opacity: 1;
+                  -webkit-transform: rotate(45deg) translate(-2px, -3px);
+                      -ms-transform: rotate(45deg) translate(-2px, -3px);
+                          transform: rotate(45deg) translate(-2px, -3px); }
+                header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon input[type^="checkbox"]:checked ~ span:nth-child(3) {
+                  opacity: 0;
+                  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+                      -ms-transform: rotate(0deg) scale(0.2, 0.2);
+                          transform: rotate(0deg) scale(0.2, 0.2); }
+                header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon input[type^="checkbox"]:checked ~ span:nth-child(4) {
+                  -webkit-transform: rotate(-45deg) translate(0, 0px);
+                      -ms-transform: rotate(-45deg) translate(0, 0px);
+                          transform: rotate(-45deg) translate(0, 0px); }
+                header.gudu-header > .header-container > .each-option.logo-option > .mobile-logo.hamburger-icon input[type^="checkbox"]:checked ~ .mobile-menu-options {
+                  max-height: 100vh; } }

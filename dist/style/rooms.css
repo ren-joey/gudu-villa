@@ -1,0 +1,211 @@
+.room-content {
+  -webkit-border-radius: 1.2rem;
+          border-radius: 1.2rem;
+  background-color: #7ab8d2;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem; }
+  .room-content > [class^='icon'] {
+    margin-right: 0.8rem; }
+  .room-content > .title {
+    font-size: 1.2rem;
+    margin-right: auto; }
+
+.room-rules {
+  margin-top: 3rem;
+  -webkit-border-radius: 1.2rem;
+          border-radius: 1.2rem;
+  border: 1px solid #7ab8d2;
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+  .room-rules > .title {
+    font-size: 1.2rem;
+    position: absolute;
+    left: 40px;
+    top: -15px;
+    padding: 0 20px;
+    color: grey;
+    z-index: 2;
+    background-color: white; }
+  .room-rules .rule-each {
+    font-size: 1rem;
+    color: grey;
+    padding-bottom: 5px; }
+
+.room-services {
+  margin-top: 1.6rem; }
+  .room-services .service-each {
+    margin-top: 2.4rem;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    padding: 0 2.4rem 2.4rem 2.4rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #f2f2f1; }
+    .room-services .service-each .service-img {
+      position: relative;
+      left: 50%;
+      top: 0;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%); }
+    .room-services .service-each > .name {
+      font-size: 1rem;
+      white-space: nowrap;
+      color: grey;
+      text-align: center;
+      margin-top: 10px; }
+
+.options-bar {
+  background-color: #7ab8d2;
+  color: white;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .options-bar .book-now {
+    color: white;
+    display: block;
+    cursor: pointer;
+    text-align: right;
+    font-size: 1.6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem; }
+
+.booking-panel {
+  max-width: 100vw;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  letter-spacing: 1rem;
+  background-color: white; }
+  .booking-panel > div {
+    margin: 1.6rem; }
+  .booking-panel > .main-logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .booking-panel > .main-logo .icon-logo {
+      color: #8c705d;
+      font-size: 4rem;
+      border-bottom: 1px solid;
+      padding-bottom: 0.85rem;
+      margin-bottom: 0.85rem; }
+    .booking-panel > .main-logo .title {
+      color: #8c705d;
+      font-size: 1.2rem; }
+  .booking-panel form.booking-sheet {
+    max-width: 100%; }
+    .booking-panel form.booking-sheet > .each {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: -webkit-calc( 100% - ($font-md * 2));
+      width: calc( 100% - ($font-md * 2));
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin: 1.2rem;
+      text-align: center; }
+      .booking-panel form.booking-sheet > .each.option-bar {
+        margin-top: 1.6rem;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+      .booking-panel form.booking-sheet > .each > .title {
+        display: block;
+        color: #8c705d;
+        padding-right: 1.2rem;
+        font-size: 0.85rem;
+        width: 12rem; }
+      .booking-panel form.booking-sheet > .each > input, .booking-panel form.booking-sheet > .each select {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        width: 100%;
+        color: #8c705d;
+        border: 1px solid;
+        font-size: 0.85rem;
+        letter-spacing: 0.425rem;
+        padding-top: 0.28333rem;
+        padding-bottom: 0.28333rem;
+        padding-left: 0.56667rem;
+        padding-right: 0.56667rem; }
+        .booking-panel form.booking-sheet > .each > input[val], .booking-panel form.booking-sheet > .each select[val] {
+          letter-spacing: 0; }
+      .booking-panel form.booking-sheet > .each .send-form {
+        background-color: #8c705d;
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border: none; }
+        .booking-panel form.booking-sheet > .each .send-form > .text {
+          color: white;
+          font-size: 0.85rem;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+          white-space: nowrap;
+          letter-spacing: 0.85rem;
+          padding-left: 0.85rem;
+          line-height: 1.7rem; }
+
+@media only screen and (max-width: 420px) {
+  .booking-panel form.booking-sheet > .each {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; } }

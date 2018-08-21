@@ -3,10 +3,36 @@
 @import mixins/rwd
 @import mixins/paddings
 
+[dialog]
+    position: relative
+    dialog
+        position: absolute
+        left: 50%
+        top: 0
+        transform: translate( -50%, -120%)
+        font-size: $font-md
+        +paddings($font-md)
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, .7)
+        color: $main-brown
+        border: none
+        white-space: nowrap
+        border-radius: 5px
+        // &::after
+        //     display: block
+        //     position: absolute
+        //     right: 2px
+        //     top: 2px
+        //     font-size: $font-xs
+        //     color: $main-brown
+        //     content: 'x'
 .wrapper
     height: calc( 100vh - 96px )
     background-image: url(../images/wood-bg.jpg)
     background-size: cover
+    &[data-style="2"]
+        background-image: url(../images/tree-bg.jpg)
+    &[data-style="3"]
+        background-image: url(../images/hotspring-bg.jpg)
     > .container
         position: relative
         +ease(default, .5s)
@@ -25,10 +51,51 @@
                 font-size: $font-sm
                 margin-bottom: 2rem
                 font-weight: 200
-                letter-spacing: 5px
+                letter-spacing: 2px
+                .detail
+                    font-size: $font-xs            
+                    letter-spacing: 0
+                    margin-bottom: -10px
+                    line-height: $font-xs * 2
+                hr
+                    border-top-color: white
             .home-icon
                 margin-left: auto
                 font-size: $font-xl
+            &[data-style="2"]
+                background-color: white
+                color: $dean-green
+            &[data-style="3"]
+                background-color: white
+                color: $dean-blue
+            &[data-style="4"]
+                background-color: transparent
+                color: $main-brown
+                border: 1px solid
+                > h1.subtitle
+                    font-size: $font-lg
+                    margin-bottom: 1.4rem
+                > h2.description
+                    font-size: $font-xs
+                    margin-bottom: 1.4rem
+                > .social-content
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-wrap: wrap
+                    width: 80%
+                    margin-left: 10%
+                    > i
+                        cursor: pointer
+                        display: block
+                        margin: 1px 8px
+                        font-size: $font-lg
+                        &[class *= 'facebook']
+                            color: $facebook-blue
+                        &[class *= 'line']
+                            color: $line-green
+                        &[class *= 'phone']
+                            color: $main-brown
         .room-options
             margin-top: 2rem
             border: 2px solid
@@ -65,12 +132,41 @@
                         font-size: $font-sm
                     &:hover
                         background-color: rgba(255, 255, 255, .15)
-                        
+    &[data-style="4"]
+        height: auto
+        background-image: none
+        > .container
+            top: 0
+            transform: translateY(0)
+            .room-options
+                color: $main-brown
+                border-width: 1px
+                > .title
+                    color: $main-brown
+                    border-width: 1px
+                > .options
+                    > .option-each
+                        color: $main-brown
+                        border-width: 1px
+                        i
+                            font-size: $font-lg
+
+.container
+    padding-top: $font-lg * 2
+    padding-bottom: $font-lg * 2
 
 .gudu-header.fixed
-    ~ .wrapper
+    ~ .wrapper:not([data-style="4"])
         height: 100vh
         > .container
             top: calc( 50% + 50px )
 
-        
++breakpoint(md)
+    .wrapper
+        padding-top: 100px
+        height: auto !important
+        > .container
+            position: relative
+            +ease(default, .5s)
+            top: 0 !important
+            transform: translateY(0)

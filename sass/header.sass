@@ -1,6 +1,7 @@
 @import variables
 @import mixins/ease
 @import mixins/rwd
+@import mixins/paddings
     
 header.gudu-header
     position: relative
@@ -22,15 +23,20 @@ header.gudu-header
             position: relative
             overflow: hidden
             cursor: pointer
+            &.mobile-option
+                display: none
             > .text
                 padding: 1rem 1.4rem
                 color: $main-brown
                 font-size: $font-sm
+                white-space: nowrap
                 +ease(default, .15s)
             > .main-logo
                 padding: 1rem 1.4rem
                 color: $main-brown
                 font-size: 4rem
+            > .mobile-logo
+                display: none
             > .hover-frame
                 position: absolute
                 left: 50%
@@ -47,3 +53,83 @@ header.gudu-header
                 > .hover-frame
                     opacity: .85
                     transform: translate(-50%, 0%)
+        +breakpoint(xs)
+            transform: translateX(0)
+            left: 0
+            justify-content: space-between
+            > .each-option
+                &:not(.mobile-option):not(.both-option)
+                    display: none
+                &.mobile-option
+                    display: block
+                &.logo-option
+                    display: flex
+                    padding: 1.6rem 2rem
+                    .main-logo.icon-logo
+                        display: none
+                    > .mobile-logo
+                        display: block
+                        color: $main-brown
+                        font-size: $font-md
+                        &.icon-logo-img
+                            margin-right: .5rem
+                        &.hamburger-icon
+                            position: relative
+                            -webkit-user-select: none
+                            user-select: none
+                            margin-top: 5px
+                            span
+                                display: block
+                                width: 33px
+                                height: 4px
+                                margin-bottom: 5px
+                                position: relative
+                                background: $main-brown
+                                border-radius: 3px
+                                transform-origin: 4px 0px
+                                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),opacity 0.55s ease
+                                &:nth-child(2)
+                                    transform-origin: 0% 0%
+                                &:nth-child(4)
+                                    transform-origin: 0% 100%
+                            .mobile-menu-options
+                                position: fixed
+                                top: 78px
+                                left: 0
+                                right: 0
+                                max-height: 0
+                                transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+                                overflow: hidden
+                                .each-option
+                                    display: block
+                                    font-size: $font-sm
+                                    +paddings($font-lg)
+                                    color: $main-brown
+                                    background-color: white
+                                    border-bottom: 1px solid
+                                    text-align: center
+                                    &:first-child
+                                        border-top: 1px solid
+                            input[type ^= "checkbox"]
+                                display: block
+                                width: 40px
+                                height: 32px
+                                position: absolute
+                                top: -7px
+                                left: -5px
+                                cursor: pointer
+                                opacity: 0
+                                -webkit-touch-callout: none
+                                z-index: 2
+                                &:checked
+                                    ~ span
+                                        &:nth-child(2)
+                                            opacity: 1
+                                            transform: rotate(45deg) translate(-2px, -3px)
+                                        &:nth-child(3)
+                                            opacity: 0
+                                            transform: rotate(0deg) scale(0.2, 0.2)
+                                        &:nth-child(4)
+                                            transform: rotate(-45deg) translate(0, 0px)
+                                    ~ .mobile-menu-options
+                                        max-height: 100vh
