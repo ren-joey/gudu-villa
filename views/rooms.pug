@@ -27,11 +27,11 @@ block content
             .each
                 label.title(for="BR") 預定房型
                 select#BR
-                    option(value="2人房", selected) 2人房-NT.8,000
-                    option(value="4人房") 4人房-NT.8,000
-                    option(value="6人房") 6人房-NT.8,000
-                    option(value="8人房") 8人房-NT.8,000
-                    option(value="包棟(20人)") 包棟(20人)-NT.8,000
+                    option(value="2人房", selected) 2人房-NT.2,500
+                    option(value="4人房") 4人房-NT.3,500
+                    option(value="6人房") 6人房-NT.4,500
+                    option(value="8人房") 8人房-NT.5,500
+                    option(value="包棟(20人)") 包棟(20人)-NT.15,000
             //- .each
             //-     label.title(for="BRP") 加床人數
             //-     input(type="text" id="BRP" placeholder="請選擇加床人數")
@@ -55,7 +55,7 @@ block content
                 .col-12.col-lg-4
                     article.descrip-area
                         h1.subtitle 鄉村2人房
-                        h2.description 
+                        h2.description
                             .detail
                                 i.fas.fa-user-friends
                                 | &nbsp; 2位 &nbsp;&nbsp;
@@ -77,10 +77,10 @@ block content
                             a.option-each(href="rooms_4.html") 4
                             a.option-each(href="rooms_6.html") 6
                             a.option-each(href="rooms_8.html") 8
-                            a.option-each(href="rooms_9.html") 
+                            a.option-each(href="rooms_9.html")
                                 .special-tag 推薦
                                 | 包棟
-                        
+
                 .col-12.col-lg-8
                     include _partials/image-gallery-simple
                     +image-gallery-simple(2)
@@ -110,6 +110,10 @@ block content
                             .rule-each
                                 |為維護其他房客之權益，非貴房客預定房型的
                                 span.f-red.f-bold 它房寢具請勿擅自使用
+                            .rule-each
+                                |請勿將
+                                span.f-red.f-bold 戶外椅拿進室內
+                                |以免刮傷地面
                         .col-12.col-md-6
                             .rule-each
                                 |客房內
@@ -122,7 +126,7 @@ block content
                                 |暖氣設備
                             .rule-each
                                 |民宿提供的設備用完請歸位，方便其他房客使用
-                                
+
             .col-12
                 .room-services
                     .row
@@ -179,5 +183,5 @@ block content
 
     aside.options-bar
         a.book-now(data-fancybox="" data-animation-duration="500" data-src="#BP" href="javascript:;") 馬上預約
-                    
+
     include ../script/rooms.script.pug
