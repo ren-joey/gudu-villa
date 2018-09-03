@@ -17,30 +17,30 @@ block content
                 iframe#id_iframe(name="id_iframe", src="", frameborder="0")
             .each
                 label.title(for="BN") 訂房人姓名
-                input#BN(type="text" placeholder="請輸入訂房人姓名")
+                input#BN(type="text" placeholder="請輸入訂房人姓名" name="name")
             .each
                 label.title(for="BP") 訂房人電話
-                input#BP(type="text" placeholder="請輸入訂房人電話")
+                input#BP(type="text" placeholder="請輸入訂房人電話" name="phone")
             .each
                 label.title(for="BE") EMAIL
-                input#BE(type="text" placeholder="請輸入EMAIL")
+                input#BE(type="text" placeholder="請輸入EMAIL" name="mail")
             .each
                 label.title(for="BR") 預定房型
-                select#BR
-                    option(value="2人房", selected) 2人房-NT.2,500
-                    option(value="4人房") 4人房-NT.3,500
-                    option(value="6人房") 6人房-NT.4,500
-                    option(value="8人房") 8人房-NT.5,500
-                    option(value="包棟(20人)") 包棟(20人)-NT.15,000
+                select#BR(name="type")
+                    option(value="2", selected) 2人房-NT.2,500
+                    option(value="4") 4人房-NT.3,500
+                    option(value="6") 6人房-NT.4,500
+                    option(value="8") 8人房-NT.5,500
+                    option(value="9)") 包棟(20人)-NT.15,000
             //- .each
             //-     label.title(for="BRP") 加床人數
             //-     input(type="text" id="BRP" placeholder="請選擇加床人數")
             .each
                 label.title(for="BD1") 入住日期
-                input#BD1(type="date" placeholder="請選擇入住日期")
+                input#BD1(type="date" placeholder="請選擇入住日期" name="date")
             .each
                 label.title(for="BD2") 入住天數
-                input#BD2(type="text" placeholder="請輸入入住天數")
+                input#BD2(type="text" placeholder="請輸入入住天數" name="days")
             .each.option-bar
                 button.send-form(type="submit")
                     .text 
