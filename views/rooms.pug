@@ -12,7 +12,9 @@ block content
         .main-logo
             .icon-logo
             .title 住宿預定
-        form#BS.booking-sheet
+        form#BS.booking-sheet(action="./action/index.php", role="form", target="id_iframe")
+            .each
+                iframe#id_iframe(name="id_iframe", src="", frameborder="0")
             .each
                 label.title(for="BN") 訂房人姓名
                 input#BN(type="text" placeholder="請輸入訂房人姓名")
@@ -40,7 +42,7 @@ block content
                 label.title(for="BD2") 入住天數
                 input#BD2(type="text" placeholder="請輸入入住天數")
             .each.option-bar
-                button.send-form
+                button.send-form(type="submit")
                     .text 
                         |填好
                         <br>
