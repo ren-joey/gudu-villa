@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>CyberShake</title>
 
-	<link href="../css/mainCSS.css" rel="stylesheet" type="text/css">
-    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!-- <link href="../css/mainCSS.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
 
     <style>
     body{
@@ -16,6 +16,7 @@
 
     <?php
 
+    $title = '您有一個新房客';
     // $str = '商店名稱：'.$_GET['inputName'] .'。電子信箱：'. $_GET['inputEmail'] .'。連絡電話：'. $_GET['inputPhone'];
     $str = '測試';
 
@@ -37,10 +38,10 @@
     $mail->CharSet = "utf-8";
 
     //Set the hostname of the mail server
-    $mail->Host = 'smtp.mail.yahoo.com';
+    $mail->Host = 'smtp.gmail.com';
 
     //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-    $mail->Port = 465;
+    $mail->Port = 587;
 
     //Set the encryption system to use - ssl (deprecated) or tls
     $mail->SMTPSecure = 'tls';
@@ -49,22 +50,26 @@
     $mail->SMTPAuth = true;
 
     //Username to use for SMTP authentication - use full email address for gmail
-    $mail->Username = "ch1540@yahoo.com.tw";
+    // $mail->Username = "joey@surgestudio.net";
+    // $mail->Username = "ch1540@yahoo.com.tw";
+    $mail->Username = "tsuyiren@gmail.com";
 
     //Password to use for SMTP authentication
-    $mail->Password = "ch063699";
+    // $mail->Password = "a600friends";
+    // $mail->Password = "ch063699";
+    $mail->Password = "uckascqnzwpeqarx";
 
     //Set who the message is to be sent from
-    $mail->setFrom('ch1540@yahoo.com.tw', '湧動創意');
+    $mail->setFrom('tsuyiren@gmail.com', '湧動創意');
 
     //Set an alternative reply-to address
-    $mail->addReplyTo('tsuyiren@gmail.com', '湧動創意');
+    // $mail->addReplyTo('tsuyiren@gmail.com', '湧動創意');
 
     //Set who the message is to be sent to
-    $mail->addAddress('tsuyiren@gmail.com', '湧動創意');
+    $mail->addAddress('ch1540@yahoo.com.tw', '古都民宿');
 
     //Set the subject line
-    $mail->Subject = '您有一個新房客';
+    $mail->Subject = $title;
 
     //Replace the plain text body with one created manually
     $mail->Body = $str;
