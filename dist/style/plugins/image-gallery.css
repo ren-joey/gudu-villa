@@ -42,6 +42,9 @@
     .image-gallery .image-show.i0-1 {
       background-image: url(../../images/0-1.jpg);
       border: 5px solid white; }
+    .image-gallery .image-show.i0-4 {
+      background-image: url(../../images/0-4.jpg);
+      border: 5px solid white; }
     .image-gallery .image-show.i1-0 {
       background-image: url(../../images/1-0.jpg);
       border: 5px solid white; }

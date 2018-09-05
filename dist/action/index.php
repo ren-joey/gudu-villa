@@ -12,13 +12,16 @@
     margin:0;
     padding:0;
     }
+    .form-signin-heading:empty{
+        opacity: 0;
+    }
     </style>
 
     <?php
 
     $name = $_GET['name'];
     $phone = $_GET['phone'];
-    $mail = $_GET['mail'];
+    $mymail = $_GET['mail'];
     $type = $_GET['type'];
     $date = $_GET['date'];
     $days = $_GET['days'];
@@ -90,7 +93,7 @@
                                                                 <td align="center" valign="middle">
                                                                     <a href="http://www.surgestudio.net/document/gudu/"
                                                                         target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.twitch.tv/r/e/eyJjaGFubmVsIjoiYXNpYWdvZHRvbmVnZzNiZTAiLCJsb2NhdGlvbiI6ImxvZ28iLCJlbWFpbF9pZCI6ImZlZjkxMzMwLWQyMTktNDgxNi1iMDZjLWUxYzJiZjM3ZjY1ZiIsInNvdXJjZV9lbWFpbCI6InR3aXRjaF9mYXZvcml0ZV91cCIsIm5hbWUiOiJ0d2l0Y2hfZmF2b3JpdGVfdXAiLCJsb2dpbiI6IiJ9/51860211/517e827907952b8ccd6dee30c4881668f3f736d0/asiagodtonegg3be0?ignore_query%3Dtrue%26tt_content%3Dtwitch_favorite_up%26tt_medium%3Demail&amp;source=gmail&amp;ust=1536088399990000&amp;usg=AFQjCNFeVhfV0wqrB6zN_-k4wTStvquajg">
-                                                                        <img style="margin-top:20px; margin-botton:20px;" src="surgestudio.net/document/gudu/images/logo.png"
+                                                                        <img style="margin-top:20px; margin-botton:20px;" src="http://www.surgestudio.net/document/gudu/images/logo.png"
                                                                             width="145" height="90" alt="古都民宿" class="CToWUd">
                                                                     </a>
                                                                 </td>
@@ -128,7 +131,7 @@
 
                                                                     <div class="m_4123362032509020739stream-status"
                                                                         style="color:#333;font-size:18px;font-weight:bold;line-height:36px;margin-top:10px;width:70%">
-                                                                        <span style="color:#8c705d;text-decoration:none">有一位新房客預訂了！</a>
+                                                                        <span style="color:#8c705d;text-decoration:none">訂房確認</a>
                                                                     </div>
 
                                                                     <a href="http://www.surgestudio.net/document/gudu/"
@@ -141,7 +144,7 @@
                                                                         <strong>'.
                                                                         '訂房人姓名：'.$name.
                                                                         '<br>訂房人電話：'.$phone.
-                                                                        '<br>電子郵件：'.$mail.
+                                                                        '<br>電子郵件：'.$mymail.
                                                                         '<br>預定房型：'.$type.
                                                                         '<br>入住日期：'.$date.
                                                                         '<br>入住天數：'.$days.
@@ -252,7 +255,8 @@
 
     //Set who the message is to be sent to
     $mail->addAddress('ch1540@yahoo.com.tw', '古都民宿');
-    $mail->addAddress('tsuyiren@gmail.com', '湧動創意');
+    // $mail->addAddress('tsuyiren@gmail.com', '湧動創意');
+    $mail->addAddress($mymail, $name);
 
     //Set the subject line
     $mail->Subject = $title;
@@ -265,19 +269,22 @@
 </head>
 <body>
 
-<div class="join-page-php">
-<h2 class="form-signin-heading" style="margin:0 !important; padding:0 !important;">
+<div class="join-page-php" style="height: 300px; background-color: white; color: #8c705d; text-align: center;">
+<h2 class="form-signin-heading" style="margin:0 !important; padding:0 !important;  text-align: center; color: #8c705d; letter-spacing: 2px;">
 <?php
 
 //send the message, check for errors
 if (!$mail->send()) {
     echo "提交失敗，請連繫管理人員。";
+    ?>
+    </h2>
+<?php
 } else {
-    echo "提交完成";
-}
+    echo "提交完成"; ?>
+    </h2>
+    <div style="margin-top: 10px;">您將會收到一封訂房確認信<br>請至 <?php echo $mymail ?>查詢</div>
+<?php } ?>
 
-?>
-</h2>
 </div>
 </body>
 </html>
