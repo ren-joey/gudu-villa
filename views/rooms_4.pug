@@ -1,51 +1,65 @@
 extends _layouts/page
 
 block head_end
+
     link(rel="stylesheet", href="./style/main.css")
     link(rel="stylesheet", href="./style/rooms.css")
+
     //- fancybox
     link(rel="stylesheet", href="./lib/jquery.fancybox.min.css")
     script(src="./lib/jquery.fancybox.min.js")
+
+    //- form validation
+    script(src="./lib/jquery.validate.min.js")
+    script(src="./script/rooms.js")
 
 block content
     aside#BP.booking-panel(style="display: none;")
         .main-logo
             .icon-logo
             .title 住宿預定
-        form#BS.booking-sheet
-            .each
+        form#BS.booking-sheet.d-relative(action="./action/index.php", role="form", target="id_iframe")
+            #loadingStatus(style="display: none; text-align: center; position: absolute; left: 0; right: 0; top: 180px; ")
+                img#loadingIcon(src="./images/loading.gif", style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);')
+                iframe#id_iframe(name='id_iframe', frameborder='0', scrolling='no', style='position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%)')
+            .each.d-relative
                 label.title(for="BN") 訂房人姓名
-                input#BN(type="text" placeholder="請輸入訂房人姓名")
-            .each
+                label#BN-error.error(for='BN', style="position:  absolute; right: 10px; top: 50%; font-size:  10px; color: red; letter-spacing: 2px; transform: translateY(-50%); z-index: 0;")
+                input#BN.b-0.z-1(type="text" placeholder="請輸入訂房人姓名" name="name", required)
+            .each.d-relative
+                label#BP-error.error(for='BP', style="position:  absolute; right: 10px; top: 50%; font-size:  10px; color: red; letter-spacing: 2px; transform: translateY(-50%); z-index: 0;")
                 label.title(for="BP") 訂房人電話
-                input#BP(type="text" placeholder="請輸入訂房人電話")
-            .each
+                input#BP.b-0.z-1(type="text" placeholder="請輸入訂房人電話" name="phone", required)
+            .each.d-relative
+                label#BE-error.error(for='BE', style="position:  absolute; right: 10px; top: 50%; font-size:  10px; color: red; letter-spacing: 2px; transform: translateY(-50%); z-index: 0;")
                 label.title(for="BE") EMAIL
-                input#BE(type="text" placeholder="請輸入EMAIL")
-            .each
+                input#BE.b-0.z-1(type="email" placeholder="請輸入EMAIL" name="mail", required)
+            .each.d-relative
+                label#BR-error.error(for='BR', style="position:  absolute; right: 10px; top: 50%; font-size:  10px; color: red; letter-spacing: 2px; transform: translateY(-50%); z-index: 0;")
                 label.title(for="BR") 預定房型
-                select#BR
-                    option(value="2人房") 2人房-NT.2,500
-                    option(value="4人房", selected) 4人房-NT.3,500
-                    option(value="6人房") 6人房-NT.4,500
-                    option(value="8人房") 8人房-NT.5,500
-                    option(value="包棟(20人)") 包棟(20人)-NT.15,000
+                select#BR.b-0.z-1(name="type")
+                    option(value="2") 2人房-NT.2,500
+                    option(value="4", selected) 4人房-NT.3,500
+                    option(value="6") 6人房-NT.4,500
+                    option(value="8") 8人房-NT.5,500
+                    option(value="9") 包棟(20人)-NT.15,000
             //- .each
             //-     label.title(for="BRP") 加床人數
             //-     input(type="text" id="BRP" placeholder="請選擇加床人數")
-            .each
+            .each.d-relative
+                label#BD1-error.error(for='BD1', style="position:  absolute; right: 10px; top: 50%; font-size:  10px; color: red; letter-spacing: 2px; transform: translateY(-50%); z-index: 0;")
                 label.title(for="BD1") 入住日期
-                input#BD1(type="date" placeholder="請選擇入住日期")
-            .each
+                input#BD1.b-0.z-1(type="date" placeholder="請選擇入住日期" name="date", required)
+            .each.d-relative
+                label#BD2-error.error(for='BD2', style="position:  absolute; right: 10px; top: 50%; font-size:  10px; color: red; letter-spacing: 2px; transform: translateY(-50%); z-index: 0;")
                 label.title(for="BD2") 入住天數
-                input#BD2(type="text" placeholder="請輸入入住天數")
+                input#BD2.b-0.z-1(type="number" placeholder="請輸入入住天數" name="days", required)
             .each.option-bar
-                button.send-form
+                button.send-form(type="submit", onclick="formSubmit()")
                     .text
                         |填好
                         <br>
                         |送出
-
     section.wrapper
         .container
             .row
@@ -65,6 +79,8 @@ block content
                         .d-flex
                             .f-lg
                                 | NT. 3,500
+                                br
+                                span.f-sm 平日優惠價 NT.2,800
                             .home-icon
                                 .icon-home
                     .room-options
@@ -86,7 +102,7 @@ block content
         .row
             .col-12
                 .room-content
-                    .title 可容納房客數
+                    .title 可容納房客數共4人
                     .icon-person
                     .icon-person
                     .icon-person
