@@ -260,13 +260,13 @@
     //Replace the plain text body with one created manually
     $mail->Body = $str;
 
-    $mail->IsHTML(true); 
+    $mail->IsHTML(true);
     ?>
 </head>
 <body>
 
 <div class="join-page-php">
-<h2 class="form-signin-heading" style="margin:0 !important; padding:0 !important;">
+<h2 class="form-signin-heading" style="margin:0 !important; padding:0 !important; text-align: center;">
 <?php
 
 //send the message, check for errors

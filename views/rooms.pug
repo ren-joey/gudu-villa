@@ -3,6 +3,8 @@ extends _layouts/page
 block head_end
     link(rel="stylesheet", href="./style/main.css")
     link(rel="stylesheet", href="./style/rooms.css")
+    script(src="./script/rooms.js")
+
     //- fancybox
     link(rel="stylesheet", href="./lib/jquery.fancybox.min.css")
     script(src="./lib/jquery.fancybox.min.js")
@@ -43,7 +45,7 @@ block content
                 input#BD2(type="text" placeholder="請輸入入住天數" name="days")
             .each.option-bar
                 button.send-form(type="submit")
-                    .text 
+                    .text
                         |填好
                         <br>
                         |送出
