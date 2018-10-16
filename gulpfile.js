@@ -1,4 +1,4 @@
-/* 
+/*
 GLOBAL REQUIRES
  */
 var gulp = require('gulp'),
@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     prefixer = require('gulp-autoprefixer'),
     sync = require('browser-sync');
 
-/* 
+/*
 LOCAL PATHS
  */
 var paths = {
@@ -16,19 +16,21 @@ var paths = {
     pug: './views/'
 };
 
-/* 
+/*
 Compile .pug files
  */
 gulp.task('pug', function () {
     return gulp.src(paths.pug + '/*.pug')
-        .pipe(pug())
+        .pipe(pug({
+            pretty: '    '
+        }))
         .pipe(gulp.dest(paths.output))
         .pipe(sync.reload({
             stream: true
         }));
 });
 
-/* 
+/*
 Compile .sass files into public css directory With autoprefixer
  */
 gulp.task('sass', function () {
