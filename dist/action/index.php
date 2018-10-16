@@ -24,7 +24,9 @@
     $mymail = $_GET['mail'];
     $type = $_GET['type'];
     $date = $_GET['date'];
+    $weekday = date('w', strtotime($date));
     $days = $_GET['days'];
+    $specialPrice = '';
     $price;
     switch($type){
         case 2:
@@ -46,6 +48,12 @@
             $price = 0;
             break;
     }
+
+    if($weekday >= 1 && $weekday <= 5){
+        $price = $price * 0.8;
+        $specialPrice = '（平日訂房優惠價）';
+    }
+
     $total = $price * $days;
     if($type == 9){
         $type = '包棟';
@@ -128,15 +136,15 @@
 
                                                                     <div style="color:#999;font-size:16px;line-height:30px;margin-bottom:40px">
                                                                         <strong>'.
-                                                                            '訂房人姓名：'.$name.
-                                                                            '<br>訂房人電話：'.$phone.
-                                                                            '<br>電子郵件：'.$mymail.
-                                                                            '<br>預定房型：'.$type.
-                                                                            '<br>入住日期：'.$date.
-                                                                            '<br>入住天數：'.$days.
-                                                                            '<br>單價：'.$price.
-                                                                            '<br><span style="color:red; font-size: 18px;">總價：'.$total.
-                                                                                '<span></strong>
+                                                                        '訂房人姓名：'.$name.
+                                                                        '<br>訂房人電話：'.$phone.
+                                                                        '<br>電子郵件：'.$mymail.
+                                                                        '<br>預定房型：'.$type.
+                                                                        '<br>入住日期：'.$date.
+                                                                        '<br>入住天數：'.$days.
+                                                                        '<br>單價<span style="color: red;">'.$specialPrice.'</span>：'.$price.
+                                                                        '<br><span style="color:red; font-size: 18px;">總價：'.$total.
+                                                                        '<span></strong>
                                                                     </div>
 
                                                                 </td>

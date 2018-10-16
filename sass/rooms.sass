@@ -23,7 +23,7 @@
     border-radius: $font-md
     border: 1px solid $light-blue
     position: relative
-    +paddings($font-xl) 
+    +paddings($font-xl)
     > .title
         font-size: $font-md
         position: absolute
@@ -119,8 +119,10 @@
                 border: 1px solid
                 font-size: $font-xs
                 letter-spacing: $font-xs / 2
-                +paddings($font-xs / 1.5) 
+                +paddings($font-xs / 1.5)
                 &[val]
+                    letter-spacing: 0
+                +breakpoint(sm)
                     letter-spacing: 0
             .send-form
                 background-color: $main-brown
@@ -147,4 +149,4 @@
             > .each
                 flex-direction: column
 
-    
+

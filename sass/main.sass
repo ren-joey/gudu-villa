@@ -26,7 +26,8 @@
         //     color: $main-brown
         //     content: 'x'
 .wrapper
-    height: calc( 100vh - 96px )
+    // min-height: calc( 100vh - 96px )
+    padding-top: 100px
     background-image: url(../images/wood-bg.jpg)
     background-size: cover
     &[data-style="2"]
@@ -36,8 +37,8 @@
     > .container
         position: relative
         +ease(default, .5s)
-        top: 50%
-        transform: translateY(-50%)
+        // top: 50%
+        // transform: translateY(-50%)
         article.descrip-area
             border: 2px solid white
             color: white
@@ -53,7 +54,7 @@
                 font-weight: 200
                 letter-spacing: 2px
                 .detail
-                    font-size: $font-xs            
+                    font-size: $font-xs
                     letter-spacing: 0
                     margin-bottom: -10px
                     line-height: $font-xs * 2
@@ -157,19 +158,19 @@
 
 .gudu-header.fixed
     ~ .wrapper:not([data-style="4"])
-        height: 100vh
-        > .container
-            top: calc( 50% + 50px )
+        min-height: 100vh
+        // > .container
+        //     top: calc( 50% + 50px )
 
 +breakpoint(md)
     .wrapper
         padding-top: 100px
         height: auto !important
-        > .container
-            position: relative
-            +ease(default, .5s)
-            top: 0 !important
-            transform: translateY(0)
+        // > .container
+        //     position: relative
+        //     +ease(default, .5s)
+        //     top: 0 !important
+        //     transform: translateY(0)
 
 
 .map-link

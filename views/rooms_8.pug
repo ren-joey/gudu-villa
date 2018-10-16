@@ -23,6 +23,8 @@ block content
                 img#loadingIcon(src="./images/loading.gif", style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);')
                 iframe#id_iframe(name='id_iframe', frameborder='0', scrolling='no', style='position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%)')
             .each.d-relative
+                .f-red.text-center.f-xs.w-100(style="margin-top: -0.5rem; margin-bottom: -0.5rem;") 平日住宿可享8折優惠
+            .each.d-relative
                 label.title(for="BN") 訂房人姓名
                 label#BN-error.error(for='BN', style="position:  absolute; right: 10px; top: 50%; font-size:  10px; color: red; letter-spacing: 2px; transform: translateY(-50%); z-index: 0;")
                 input#BN.b-0.z-1(type="text" placeholder="請輸入訂房人姓名" name="name", required)
@@ -38,11 +40,11 @@ block content
                 label#BR-error.error(for='BR', style="position:  absolute; right: 10px; top: 50%; font-size:  10px; color: red; letter-spacing: 2px; transform: translateY(-50%); z-index: 0;")
                 label.title(for="BR") 預定房型
                 select#BR.b-0.z-1(name="type")
-                    option(value="2") 2人房-NT.2,500
-                    option(value="4") 4人房-NT.3,500
-                    option(value="6") 6人房-NT.4,500
-                    option(value="8", selected) 8人房-NT.5,500
-                    option(value="9") 包棟(20人)-NT.15,000
+                    option#BR_1(value="2") 2人房-NT.2,500
+                    option#BR_2(value="4") 4人房-NT.3,500
+                    option#BR_3(value="6") 6人房-NT.4,500
+                    option#BR_4(value="8", selected) 8人房-NT.5,500
+                    option#BR_5(value="9") 包棟(20人)-NT.15,000
             //- .each
             //-     label.title(for="BRP") 加床人數
             //-     input(type="text" id="BRP" placeholder="請選擇加床人數")

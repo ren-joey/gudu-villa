@@ -180,6 +180,9 @@
         padding-right: 0.56667rem; }
         .booking-panel form.booking-sheet > .each > input[val], .booking-panel form.booking-sheet > .each select[val] {
           letter-spacing: 0; }
+        @media (max-width: 767.98px) {
+          .booking-panel form.booking-sheet > .each > input, .booking-panel form.booking-sheet > .each select {
+            letter-spacing: 0; } }
       .booking-panel form.booking-sheet > .each .send-form {
         background-color: #8c705d;
         -webkit-border-radius: 50%;
